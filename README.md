@@ -1,24 +1,16 @@
-# How to use this
-Each script is independent from each other.
-- Download whichever you want.
-- Make it executable i.e. `chmod +x sinkSwitcher.sh`.
-- Add a keyboard shortcut to execute each script.
-Note: I had to install compizconfig-settings-manager to set the shorcuts. `sudo apt-get install compizconfig-settings-manager`.
-
 # How it works
 
 ## sinkSwitcher.sh
 
-This scripts detects the application that is on focus, then find all belonging sink-inputs and switch them to next sink.
+This scripts detects the application that is on focus, find all audios coming from it and switch them to play on the next audio device.
 
 *Intended to run with a shortcut.*
 
 #### For example:
-You're listening music with your Headphones, but you want to play a movie for your kids through a TV connected with HDMI,
-but the movie's audio is playing on your headphones
+You're listening music with your Headphones, and you want to play a movie for your kids through a TV connected with HDMI,
+but the movie's audio is instead playing on your headphones.
 
-All you have to do is focus the movie player (VLC, Smplayer, or whatever) and run `sinkSwitcher.sh` using a shortcut, always keeping the movie on focus. 
-The script will automatically detect all audios coming from the movie player and play them through another device.
+All you have to do is focus the movie player (VLC, Smplayer, or whatever) and run `sinkSwitcher.sh` using a shortcut, always keeping the movie on focus. The script will automatically detect all audios coming from the movie player and play them through another device.
 
 ### Dependencies:
 `sudo apt-get install pulseaudio xprop`
@@ -37,3 +29,10 @@ Each time you want to change the volume of another device, run this script first
 
 # TO-DOs:
 Add notification to each changes
+
+# How to use this
+Each script is independent from each other.
+- Download whichever you want.
+- Make it executable i.e. `chmod +x sinkSwitcher.sh`.
+- Add a keyboard shortcut to execute each script.
+Note: I had to install compizconfig-settings-manager to set the shorcuts. `sudo apt-get install compizconfig-settings-manager`.
