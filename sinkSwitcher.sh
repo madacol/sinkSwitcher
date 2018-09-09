@@ -11,6 +11,10 @@
 # Intended to run with a shortcut.
 
 #######
+##  Terminology
+# sink:        audio devices (mostly hardware)
+# sink-inputs: audios coming from apps
+#######
 
 # Find PID of focused window
 xid=$(xprop -root _NET_ACTIVE_WINDOW | awk '{print $NF}')
@@ -25,11 +29,11 @@ pacmd list-sink-inputs | grep -E 'index:|sink:|process.id' | tr '\n' ' ' | tr -d
   if [ $sink_input_pid = $app_pid ]; then
 
     sink_input_index=$(echo $line | awk '{print $1}')
-    current_sink_index=$(echo $line | awk '{print $3}')
+    current_sink_index=$(echo $line | awk '{print $3}') # this is the sink where current sink-input is playing
 
     i=0
     for sink in "${sink_list_array[@]}"; do
-      i=$((($i+1)%sink_list_size)) #i++
+      i=$((($i+1)%sink_list_size))  # i++ mod(#sinks)
       if [ $sink = $current_sink_index ]; then
         next_sink_index=${sink_list_array[i]}
         break
