@@ -29,10 +29,12 @@ This scripts detects the application that is on focus, find all audios coming fr
 Focus the application you want it to play in another sink(audio device) and run `sinkSwitcher.sh` with a shortcut
 
 ### For example:
-You're listening music with your Headphones, and you want to play a movie for your kids through a TV connected with HDMI,
-but the movie's audio is instead playing on your headphones.
 
-All you have to do is focus the movie player (VLC, Smplayer, or whatever) and run `sinkSwitcher.sh` using a shortcut, always keeping the movie on focus. The script will automatically detect all audios coming from the movie player and play them through another device.
+You have 2 audio devices connected, a headphone and a speaker
+
+You are watching a video in your browser and its playing through your speakers, but you want to listen to it through your headphones instead.
+
+Focus your browser, and run this script with a shortcut, *always keeping the browser on focus*. The script will automatically detect all audios coming from the browser and play them through the next audio device.
 
 ---
 
