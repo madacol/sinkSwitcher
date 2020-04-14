@@ -1,7 +1,7 @@
 
 This repo is comprised of 2 scripts
-1. [sinkSwitcher](#sinkSwitcher.sh)
-2. [sinkDefaultSwitcher](#sinkDefaultSwitcher.sh)
+1. [sinkSwitcher](#sinkSwitcher)
+2. [sinkDefaultSwitcher](#sinkDefaultSwitcher)
 
 Each script is independent from each other.
 
@@ -14,7 +14,7 @@ Each script is independent from each other.
 
 ---
 
-## sinkSwitcher.sh
+## sinkSwitcher
 
 This scripts detects the application that is on focus, find all audios coming from it and switch them to play on the next audio device.
 
@@ -36,7 +36,7 @@ All you have to do is focus the movie player (VLC, Smplayer, or whatever) and ru
 
 ---
 
-## sinkDefaultSwitcher.sh:
+## sinkDefaultSwitcher:
 This script will just change the default sink(audio device), after this you will be able to control the volume of other sinks.
 
 ### Dependencies:
