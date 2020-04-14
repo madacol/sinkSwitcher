@@ -14,9 +14,6 @@ All you have to do is focus the movie player (VLC, Smplayer, or whatever) and ru
 
 ### Dependencies:
 `sudo apt-get install pulseaudio xprop`
-#### Recommended:
-`sudo apt-get install compizconfig-settings-manager`.
-To configure this script with a keyboard shortcut on Ubuntu.
 
 ### Usage:
 Focus the application you want to change its sink and run `sinkSwitcher.sh` with a shortcut
@@ -35,4 +32,3 @@ Each script is independent from each other.
 - Download whichever you want.
 - Make it executable i.e. `chmod +x sinkSwitcher.sh`.
 - Add a keyboard shortcut to execute each script.
-Note: I had to install compizconfig-settings-manager to set the shorcuts. `sudo apt-get install compizconfig-settings-manager`.
