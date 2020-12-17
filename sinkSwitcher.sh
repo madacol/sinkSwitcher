@@ -3,7 +3,6 @@
 #######
 
 # Dependencies: pulseaudio, xprop
-# Recommended: compizconfig-settings-manager. To configure this script with a keyboard shortcut.
 # Intended to run with a keyboard shortcut.
 
 # USAGE: Focus the application you want to change its sink and run this script with a shortcut.
