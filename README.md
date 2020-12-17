@@ -9,8 +9,9 @@ Each script is independent from each other.
 - Download whichever you want.
 - Install dependencies. `sudo apt-get install pulseaudio xprop`
 - Make it executable. `chmod +x sinkSwitcher.sh`.
-- Add a symbolic link to your PATH. `ln -s sinkSwitcher.sh ~/.local/bin/sinkSwitcher`
-- Add a keyboard shortcut to execute each script.
+- Add a symbolic link to your PATH. `ln -s $(pwd)/sinkSwitcher.sh ~/.local/bin/sinkSwitcher`
+- Add a keyboard shortcut to execute each script.\
+Example command: `bash  /home/{user}/.local/bin/sinkSwitcher`
 
 ---
 
