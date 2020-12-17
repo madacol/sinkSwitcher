@@ -15,7 +15,6 @@ current_sink_index=$(pacmd list-sinks | grep '* index' | awk '{print $NF}')
 i=0
 for sink in "${sink_list_array[@]}"; do
   i=$((($i+1)%sink_list_size))  # i++ mod(#sinks)
-  echo $sink $i $current_sink_index
   if [ $sink = $current_sink_index ]; then
     next_sink_index=${sink_list_array[i]}
     break
