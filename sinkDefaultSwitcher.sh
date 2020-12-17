@@ -7,10 +7,10 @@
 
 #######
 
-sink_list_array=( $(pacmd list-sinks | awk '/index:/{print $NF}') )
+sink_list_array=( $(pacmd list-sinks | grep 'index' | awk '{print $NF}') )
 sink_list_size=${#sink_list_array[@]}
 
-current_sink_index=$(pacmd list-sinks | awk '/* index:/{print $NF}')
+current_sink_index=$(pacmd list-sinks | grep '* index' | awk '{print $NF}')
 
 i=0
 for sink in "${sink_list_array[@]}"; do
