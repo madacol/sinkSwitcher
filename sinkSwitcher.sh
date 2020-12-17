@@ -18,11 +18,29 @@
 # pid-source: pids of app on focus (main pid, and children's pid's)
 #######
 
+# Recursive function to get all the nested Pids from the main pid
+MAX_RECURSION=10
+i=0
+getAllRelatedPids()
+{
+    local parentPid=$1
+    local childrenPids=( $(pgrep -P $parentPid) )
+    local nestedPids=()
+    for childPid in "${childrenPids[@]}"; do
+      i=$((i+1))
+      if [ $i = $MAX_RECURSION ]; then
+        return
+      fi
+      nestedPids+=( $(getAllRelatedPids $childPid) )
+      i=$((i-1))
+    done
+    echo "$parentPid ${nestedPids[@]}"
+}
+
 # Find PIDs of focused window
 xid=$(xprop -root _NET_ACTIVE_WINDOW | awk '{print $NF}')
 app_main_pid=$(xprop -id $xid _NET_WM_PID | awk '{print $NF}')
-app_children_pids_array=( $(pgrep -P $app_main_pid) )
-pid_sources_array=($app_main_pid "${app_children_pids_array[@]}") # app's pid, and it's children pid's
+pid_sources_array=( $(getAllRelatedPids $app_main_pid) )
 sink_list_array=( $(pacmd list-sinks | awk '/index:/{print $NF}') )
 sink_list_size=${#sink_list_array[@]}
 
