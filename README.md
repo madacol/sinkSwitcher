@@ -1,11 +1,14 @@
+# Audio Switcher
 
 This repo is comprised of 2 scripts
+
 1. [sinkSwitcher](#sinkSwitcher)
 2. [sinkDefaultSwitcher](#sinkDefaultSwitcher)
 
 Each script is independent from each other.
 
 ## Quick setup
+
 - Download whichever you want.
 - Install dependencies. `sudo apt-get install pulseaudio xprop`
 - Make it executable. `chmod +x sinkSwitcher.sh`.
@@ -21,15 +24,15 @@ This scripts detects the application that is on focus, find all audios coming fr
 
 *Intended to run with a shortcut.*
 
-### Dependencies:
+### Dependencies
 
     sudo apt-get install pulseaudio xprop
 
+### Usage
 
-### Usage:
 Focus the application you want it to play in another sink(audio device) and run `sinkSwitcher.sh` with a shortcut
 
-### For example:
+### For example
 
 You have 2 audio devices connected, a headphone and a speaker
 
@@ -39,15 +42,18 @@ Focus your browser, and run this script with a shortcut, *always keeping the bro
 
 ---
 
-## sinkDefaultSwitcher:
+## sinkDefaultSwitcher
+
 This script will just change the default sink(audio device), after this you will be able to control the volume of other sinks.
 
-### Dependencies:
+### Dependencies
 
     sudo apt-get install pulseaudio
 
-### For example:
+### For example
+
 Each time you want to change the volume of another sink, run this script first and then change volume.
 
-# TO-DOs:
+## TO-DOs
+
 Add notification to each changes
